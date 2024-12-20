@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие</title>
+    <style>
+        .image-container {
+            display: flex; /* Для горизонтального отображения изображений */
+            justify-content: center; /* Центрируем изображения */
+            margin-top: 20px; /* Добавляем пространство сверху */
+        }
+        .image-container img {
+            max-width: 400px; /* Ограничиваем ширину изображений */
+            margin: 0 10px; /* Добавляем отступы между изображениями */
+        }
+    </style>
+</head>
+<body>
+    <h1>Добро пожаловать, {{ full_name }}</h1>
+
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='бабулькии.jpg') }}" alt="бабулькии">
+    </div>
+<form method="POST" action="{{ url_for('exit', full_name=full_name) }}">
+<button type="submit">Покинуть сайт</button>
+</form>
+</body>
+</html>
